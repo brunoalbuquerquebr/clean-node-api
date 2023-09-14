@@ -6,6 +6,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "lint-staged": {
+    "*.js": [
+      "standard --fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/brunoalbuquerquebr/clean-node-api.git"
@@ -16,5 +27,10 @@
   "bugs": {
     "url": "https://github.com/brunoalbuquerquebr/clean-node-api/issues"
   },
-  "homepage": "https://github.com/brunoalbuquerquebr/clean-node-api#readme"
+  "homepage": "https://github.com/brunoalbuquerquebr/clean-node-api#readme",
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "standard": "^17.1.0"
+  }
 }
