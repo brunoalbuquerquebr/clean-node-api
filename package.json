@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --watchAll",
+    "test:staged": "jest"
   },
   "lint-staged": {
     "*.js": [
       "standard --fix",
+      "npm run test:staged",
       "git add"
     ]
   },
@@ -34,7 +36,7 @@
   },
   "homepage": "https://github.com/brunoalbuquerquebr/clean-node-api#readme",
   "devDependencies": {
-    "husky": "^8.0.3",
+    "husky": "^4.3.8",
     "jest": "^29.7.0",
     "lint-staged": "^14.0.1",
     "standard": "^17.1.0"
